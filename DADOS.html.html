@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Erick's World // Animes & Games</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Space+Grotesk:wght@400;700&family=VT323&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        theme: {
+                            red: '#ff003c',
+                            yellow: '#ffee00',
+                            cyan: '#00f0ff',
+                            purple: '#9d4edd',
+                            dark: '#0d0d12',
+                            card: '#161622',
+                            accent: '#ff2a00'
+                        }
+                    },
+                    fontFamily: {
+                        marker: ['"Permanent Marker"', 'cursive'],
+                        pixel: ['"VT323"', 'monospace'],
+                        sans: ['"Space Grotesk"', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        body {
+            background-color: #0a0a0e;
+            background-image: 
+                radial-gradient(circle at 15% 15%, rgba(0, 240, 255, 0.12) 0%, transparent 40%),
+                radial-gradient(circle at 85% 85%, rgba(157, 78, 221, 0.18) 0%, transparent 40%),
+                radial-gradient(circle at 50% 50%, rgba(255, 238, 0, 0.05) 0%, transparent 60%);
+            background-attachment: fixed;
+        }
+
+        .comic-border {
+            border: 3px solid #000;
+            box-shadow: 5px 5px 0px #000;
+            transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .comic-border:hover {
+            transform: translate(-3px, -3px);
+            box-shadow: 8px 8px 0px #00f0ff;
+        }
+
+        .comic-border-cyan:hover {
+            box-shadow: 8px 8px 0px #00f0ff;
+        }
+
+        .comic-border-yellow:hover {
+            box-shadow: 8px 8px 0px #ffee00;
+        }
+
+        .comic-border-purple:hover {
+            box-shadow: 8px 8px 0px #9d4edd;
+        }
+
+        .glitch-text {
+            text-shadow: 3px 3px #00f0ff, -3px -3px #9d4edd;
+        }
+
+        .sticker {
+            transform: rotate(var(--rotation, -3deg));
+            transition: transform 0.3s ease;
+        }
+        .sticker:hover {
+            transform: rotate(0deg) scale(1.1);
+            z-index: 20;
+        }
+
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0d0d12;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #00f0ff;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body class="text-gray-100 font-sans selection:bg-theme-cyan selection:text-black">
+
+    <header class="relative min-h-[85vh] flex flex-col justify-center items-center px-4 py-12 text-center overflow-hidden">
+        <div class="absolute top-10 left-5 md:left-20 opacity-20 text-6xl text-theme-cyan animate-bounce pointer-events-none">
+            <i class="fa-solid fa-gamepad"></i>
+        </div>
+        <div class="absolute bottom-10 right-5 md:right-20 opacity-20 text-6xl text-theme-purple animate-pulse pointer-events-none">
+            <i class="fa-solid fa-tv"></i>
+        </div>
+        <div class="absolute top-1/3 right-10 opacity-15 text-8xl text-theme-yellow pointer-events-none font-marker">
+            ゴゴゴ
+        </div>
+
+        <div class="flex flex-wrap justify-center gap-3 mb-6">
+            <span class="sticker bg-theme-cyan text-black font-marker px-4 py-1.5 text-sm rounded comic-border" style="--rotation: -4deg;">
+                ⚡ Estudante em Jaraguá do Sul SC
+            </span>
+            <span class="sticker bg-theme-yellow text-black font-marker px-4 py-1.5 text-sm rounded comic-border" style="--rotation: 3deg;">
+                🎌 Re:Zero / Demon Slayer / Chainsaw Man
+            </span>
+            <span class="sticker bg-theme-purple text-white font-marker px-4 py-1.5 text-sm rounded comic-border" style="--rotation: -2deg;">
+                🎮 Persona 5 & Silksong
+            </span>
+        </div>
+
+        <h1 class="text-6xl sm:text-7xl md:text-9xl font-extrabold tracking-wider uppercase font-marker glitch-text text-white mb-4">
+            ERICK<span class="text-theme-cyan">.</span>
+        </h1>
+        
+        <p class="text-xl sm:text-2xl font-pixel text-theme-yellow max-w-2xl bg-black/80 p-4 rounded-xl border border-theme-yellow/40 backdrop-blur-sm shadow-xl">
+            > [Status]: Esperando ansiosamente para a steel ball run🏇🥎.
+        </p>
+
+        <div class="mt-8 flex flex-wrap justify-center gap-4">
+            <a href="#sobre" class="comic-border bg-theme-cyan text-black font-marker px-6 py-3 rounded-xl hover:bg-theme-yellow hover:text-black transition-colors duration-200">
+                <i class="fa-solid fa-user-ninja mr-2"></i> Sobre Mim
+            </a>
+            <a href="#gostos" class="comic-border bg-black text-theme-purple border-theme-purple font-marker px-6 py-3 rounded-xl hover:bg-theme-purple hover:text-white transition-colors duration-200">
+                <i class="fa-solid fa-heart mr-2"></i> Meus Gostos
+            </a>
+            <a href="#contatos" class="comic-border bg-theme-yellow text-black font-marker px-6 py-3 rounded-xl hover:bg-theme-cyan hover:text-black transition-colors duration-200">
+                <i class="fa-solid fa-paper-plane mr-2"></i> Contatos
+            </a>
+        </div>
+    </header>
+
+    <section id="sobre" class="max-w-5xl mx-auto px-4 py-12">
+        <div class="comic-border bg-theme-card p-6 sm:p-10 rounded-2xl relative overflow-hidden">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
+                <div class="flex flex-col items-center">
+                    <div class="relative w-48 h-48 sm:w-56 sm:h-56 comic-border rounded-2xl overflow-hidden bg-black flex items-center justify-center group">
+                        <img src="https://i.pinimg.com/originals/7d/db/ef/7ddbef156d5b3e6faa88c522173ab372.jpg" 
+                             alt="Erick Avatar" 
+                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300 filter contrast-125">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent"></div>
+                        <span class="absolute bottom-3 left-3 text-xs font-pixel bg-theme-cyan text-black px-2 py-1 rounded font-bold">
+                            ESTUDANTE DE SC
+                        </span>
+                    </div>
+                </div>
+
+                <div class="md:col-span-2 space-y-4">
+                    <div class="inline-block bg-theme-yellow text-black font-marker px-3 py-1 rounded text-sm mb-1">
+                        📍 Jaraguá do Sul - SC
+                    </div>
+                    <h2 class="text-3xl sm:text-4xl font-marker text-white">
+                        Eae! Eu sou o Erick 🎮
+                    </h2>
+                    <p class="text-gray-300 leading-relaxed text-lg">
+                        Moro e estudo em Jaraguá do Sul (SC). No meu tempo livre curto muito jogar, maratonar animes e ler mangás como Uzumaki Espiral e Sense Life.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="gostos" class="max-w-6xl mx-auto px-4 py-12">
+        <h2 class="text-4xl sm:text-5xl font-marker text-center text-white mb-2 glitch-text">
+            MEUS GOSTOS 
+        </h2>
+        <p class="text-center font-pixel text-theme-cyan text-xl mb-12">
+            [ Clique nos cards para abrir os detalhes ]
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+            <!-- Card 1: Jogos Favoritos -->
+            <div onclick="openModal('games')" class="comic-border comic-border-purple bg-theme-card p-6 rounded-2xl cursor-pointer hover:bg-theme-card/80 transition-all group">
+                <div class="flex justify-between items-start mb-4">
+                    <div class="w-12 h-12 rounded-xl bg-theme-purple/25 border border-theme-purple flex items-center justify-center text-theme-purple text-2xl group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-gamepad"></i>
+                    </div>
+                    <span class="font-pixel text-xs bg-theme-purple/25 text-theme-purple px-2 py-1 rounded border border-theme-purple/40 font-bold">
+                        GAMING
+                    </span>
+                </div>
+                <h3 class="text-2xl font-marker text-white mb-2 group-hover:text-theme-purple">Jogos Favoritos</h3>
+                <p class="text-gray-400 text-sm mb-4">
+                    De JRPGs estilosos com trilha sonora impecável até tiros competitivos e desafios de precisão.
+                </p>
+                <div class="flex flex-wrap gap-2">
+                    <span class="text-xs bg-black text-gray-300 px-2.5 py-1 rounded border border-gray-800">Persona 5 Royal</span>
+                    <span class="text-xs bg-black text-gray-300 px-2.5 py-1 rounded border border-gray-800">Silksong</span>
+                    <span class="text-xs bg-black text-gray-300 px-2.5 py-1 rounded border border-gray-800">Cuphead</span>
+                    <span class="text-xs bg-black text-gray-300 px-2.5 py-1 rounded border border-gray-800">Valorant</span>
+                </div>
+            </div>
+
+            <!-- Card 2: Animes Favoritos -->
+            <div onclick="openModal('animes')" class="comic-border comic-border-cyan bg-theme-card p-6 rounded-2xl cursor-pointer hover:bg-theme-card/80 transition-all group">
+                <div class="flex justify-between items-start mb-4">
+                    <div class="w-12 h-12 rounded-xl bg-theme-cyan/25 border border-theme-cyan flex items-center justify-center text-theme-cyan text-2xl group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-tv"></i>
+                    </div>
+                    <span class="font-pixel text-xs bg-theme-cyan/25 text-theme-cyan px-2 py-1 rounded border border-theme-cyan/40 font-bold">
+                        ANIMES
+                    </span>
+                </div>
+                <h3 class="text-2xl font-marker text-white mb-2 group-hover:text-theme-cyan">Animes Favoritos</h3>
+                <p class="text-gray-400 text-sm mb-4">
+                    Lutas frenéticas, animações de encher os olhos e batalhas épicas com poderes insanos.
+                </p>
+                <div class="flex flex-wrap gap-2">
+                    <span class="text-xs bg-black text-gray-300 px-2.5 py-1 rounded border border-gray-800">Re:Zero</span>
+                    <span class="text-xs bg-black text-gray-300 px-2.5 py-1 rounded border border-gray-800">Demon Slayer</span>
+                    <span class="text-xs bg-black text-gray-300 px-2.5 py-1 rounded border border-gray-800">Chainsaw Man</span>
+                    <span class="text-xs bg-black text-gray-300 px-2.5 py-1 rounded border border-gray-800">MHA</span>
+                    <span class="text-xs bg-black text-gray-300 px-2.5 py-1 rounded border border-gray-800">JoJo</span>
+                </div>
+            </div>
+
+            <!-- Card 3: Mangás Favoritos -->
+            <div onclick="openModal('mangas')" class="comic-border comic-border-yellow bg-theme-card p-6 rounded-2xl cursor-pointer hover:bg-theme-card/80 transition-all group">
+                <div class="flex justify-between items-start mb-4">
+                    <div class="w-12 h-12 rounded-xl bg-theme-yellow/25 border border-theme-yellow flex items-center justify-center text-theme-yellow text-2xl group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-book-open"></i>
+                    </div>
+                    <span class="font-pixel text-xs bg-theme-yellow/25 text-theme-yellow px-2 py-1 rounded border border-theme-yellow/40 font-bold">
+                        LEITURA HQ
+                    </span>
+                </div>
+                <h3 class="text-2xl font-marker text-white mb-2 group-hover:text-theme-yellow">Mangás Favoritos</h3>
+                <p class="text-gray-400 text-sm mb-4">
+                    Traços perturbadores e histórias marcantes. Do terror psicológico ao gore estilizado.
+                </p>
+                <div class="flex flex-wrap gap-2">
+                    <span class="text-xs bg-black text-gray-300 px-2.5 py-1 rounded border border-gray-800">Uzumaki Espiral</span>
+                    <span class="text-xs bg-black text-gray-300 px-2.5 py-1 rounded border border-gray-800">Sense Life</span>
+                    <span class="text-xs bg-black text-gray-300 px-2.5 py-1 rounded border border-gray-800">Chainsaw Man</span>
+                </div>
+            </div>
+
+            <!-- Card 4: Assistir & Jogar -->
+            <div onclick="openModal('passatempos')" class="comic-border comic-border-cyan bg-theme-card p-6 rounded-2xl cursor-pointer hover:bg-theme-card/80 transition-all group lg:col-span-3">
+                <div class="flex justify-between items-start mb-4">
+                    <div class="w-12 h-12 rounded-xl bg-green-500/25 border border-green-500 flex items-center justify-center text-green-400 text-2xl group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-couch"></i>
+                    </div>
+                    <span class="font-pixel text-xs bg-green-500/25 text-green-400 px-2 py-1 rounded border border-green-500/40 font-bold">
+                        PASSATEMPO
+                    </span>
+                </div>
+                <h3 class="text-2xl font-marker text-white mb-2 group-hover:text-green-400">Assistir & Jogar</h3>
+                <p class="text-gray-400 text-sm mb-4">
+                    A rotina perfeita do final de semana: colar no Discord com os amigos pra jogar Valorant, e assistir animes com a rapaziada.
+                </p>
+                <div class="flex flex-wrap gap-2">
+                    <span class="text-xs bg-black text-gray-300 px-2.5 py-1 rounded border border-gray-800">Call no Discord</span>
+                    <span class="text-xs bg-black text-gray-300 px-2.5 py-1 rounded border border-gray-800">Ranked no Valorant</span>
+                    <span class="text-xs bg-black text-gray-300 px-2.5 py-1 rounded border border-gray-800">Maratona de JoJo</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SEÇÃO CONTATOS -->
+    <section id="contatos" class="max-w-4xl mx-auto px-4 py-12">
+        <div class="comic-border bg-theme-card p-6 sm:p-10 rounded-3xl border-2 border-theme-cyan relative">
+            <h2 class="text-4xl font-marker text-white mb-2 text-center glitch-text">
+                FAÇA CONTATO 📩
+            </h2>
+            <p class="text-center font-pixel text-theme-cyan text-lg mb-8">
+                Bora jogar uma partida de Valorant ou trocar ideia sobre animes!
+            </p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                
+                <div class="comic-border bg-black/60 p-4 rounded-xl flex items-center gap-4 hover:border-theme-purple transition-colors">
+                    <div class="w-12 h-12 rounded-lg bg-theme-purple/25 text-theme-purple flex items-center justify-center text-2xl">
+                        <i class="fa-brands fa-discord"></i>
+                    </div>
+                    <div>
+                        <span class="text-xs font-pixel text-theme-purple">DISCORD</span>
+                        <h4 class="font-marker text-white text-lg">coxinha_doce_</h4>
+                    </div>
+                </div>
+
+                <div class="comic-border bg-black/60 p-4 rounded-xl flex items-center gap-4 hover:border-theme-yellow transition-colors">
+                    <div class="w-12 h-12 rounded-lg bg-theme-yellow/25 text-theme-yellow flex items-center justify-center text-2xl">
+                        <i class="fa-solid fa-gamepad"></i>
+                    </div>
+                    <div>
+                        <span class="text-xs font-pixel text-theme-yellow">RIOT / VALORANT</span>
+                        <h4 class="font-marker text-white text-lg">CoxinhaDoce#1503</h4>
+                    </div>
+                </div>
+
+                <a href="https://github.com/CoxinhaDoce/primeira-aplica-o.git" target="_blank" rel="noopener noreferrer" class="comic-border bg-black/60 p-4 rounded-xl flex items-center gap-4 hover:border-theme-cyan transition-colors group">
+                    <div class="w-12 h-12 rounded-lg bg-theme-cyan/25 text-theme-cyan flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">
+                        <i class="fa-brands fa-github"></i>
+                    </div>
+                    <div class="overflow-hidden">
+                        <span class="text-xs font-pixel text-theme-cyan">GITHUB</span>
+                        <h4 class="font-marker text-white text-base truncate">CoxinhaDoce</h4>
+                    </div>
+                </a>
+
+                <div class="comic-border bg-black/60 p-4 rounded-xl flex items-center gap-4 hover:border-theme-purple transition-colors">
+                    <div class="w-12 h-12 rounded-lg bg-theme-purple/25 text-theme-purple flex items-center justify-center text-2xl">
+                        <i class="fa-solid fa-envelope"></i>
+                    </div>
+                    <div>
+                        <span class="text-xs font-pixel text-theme-purple">E-MAIL</span>
+                        <h4 class="font-marker text-white text-lg">erickpedri348@gmail.com</h4>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer class="text-center py-8 border-t border-stone-800 text-gray-500 text-sm font-sans">
+        <div class="max-w-4xl mx-auto px-4 space-y-2">
+            <p class="font-marker text-theme-cyan text-lg">
+                ERICK // JARAGUÁ DO SUL - SC
+            </p>
+            <p class="text-xs font-pixel text-gray-400">
+                Animes, Mangás e Jogos.
+            </p>
+        </div>
+    </footer>
+
+    <div id="info-modal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="comic-border bg-theme-card max-w-lg w-full p-6 sm:p-8 rounded-2xl relative">
+            <button onclick="closeModal()" class="absolute top-4 right-4 text-white hover:text-theme-cyan text-2xl font-bold">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div id="modal-content"></div>
+        </div>
+    </div>
+
+    <script>
+        const modalData = {
+            games: {
+                title: "🎮 Jogos Favoritos",
+                subtitle: "RPG, Ação & Competitivo",
+                content: `
+                    <ul class="space-y-2 text-sm text-gray-200">
+                        <li class="bg-black/50 p-2 rounded border-l-4 border-theme-purple"><strong>Persona 5 Royal:</strong> Estilo, UI incrível, história marcante e trilha sonora perfeita.</li>
+                        <li class="bg-black/50 p-2 rounded border-l-4 border-theme-yellow"><strong>Hollow Knight: Silksong:</strong> Melhor jogo Metroidvania.</li>
+                        <li class="bg-black/50 p-2 rounded border-l-4 border-theme-cyan"><strong>Cuphead:</strong> Chefões que dão uma satisfação imensa quando você passa e gráficos clássicos de época.</li>
+                        <li class="bg-black/50 p-2 rounded border-l-4 border-theme-purple"><strong>Valorant:</strong> Tático pra colar com os amigos no Discord.</li>
+                    </ul>
+                `
+            },
+            animes: {
+                title: "📺 Animes Favoritos",
+                subtitle: "Animação & Batalhas Épicas",
+                content: `
+                    <div class="grid grid-cols-2 gap-2 text-xs text-white">
+                        <div class="bg-black/50 border border-theme-cyan p-3 rounded font-bold">⏳ Re:Zero</div>
+                        <div class="bg-black/50 border border-theme-cyan p-3 rounded font-bold">⚔ Demon Slayer</div>
+                        <div class="bg-black/50 border border-theme-yellow p-3 rounded font-bold">🪚 Chainsaw Man</div>
+                        <div class="bg-black/50 border border-theme-purple p-3 rounded font-bold">💥 My Hero Academia</div>
+                        <div class="bg-black/50 border border-theme-cyan p-3 rounded font-bold col-span-2">🌟 JoJo's Bizarre Adventure</div>
+                    </div>
+                `
+            },
+            mangas: {
+                title: "📖 Mangás Favoritos",
+                subtitle: "Terror Psicológico & Ação",
+                content: `
+                    <div class="space-y-2 text-sm text-gray-200">
+                        <div class="bg-black/50 p-2 rounded border-l-4 border-theme-yellow"><strong>Uzumaki Espiral</strong></div>
+                        <div class="bg-black/50 p-2 rounded border-l-4 border-theme-purple"><strong>Sense Life</strong></div>
+                        <div class="bg-black/50 p-2 rounded border-l-4 border-theme-cyan"><strong>Chainsaw Man</strong></div>
+                    </div>
+                `
+            },
+            passatempos: {
+                title: "🛋️ Assistir & Jogar",
+                subtitle: "Modo de Vida",
+                content: `
+                    <p class="text-gray-300 text-sm">
+                        O combo de fim de semana perfeito: juntar a galera no Discord, jogar partidas de Valorant e assistir animes no final do dia.
+                    </p>
+                `
+            }
+        };
+
+        function openModal(key) {
+            const data = modalData[key];
+            if (!data) return;
+
+            const contentHtml = `
+                <span class="text-xs font-pixel text-theme-yellow uppercase tracking-widest">${data.subtitle}</span>
+                <h3 class="text-3xl font-marker text-white mb-4">${data.title}</h3>
+                ${data.content}
+                <button onclick="closeModal()" class="mt-6 w-full comic-border bg-theme-cyan text-black font-marker py-2.5 rounded-xl hover:bg-theme-yellow hover:text-black transition-colors">
+                    FECHAR
+                </button>
+            `;
+
+            document.getElementById('modal-content').innerHTML = contentHtml;
+            document.getElementById('info-modal').classList.remove('hidden');
+        }
+
+        function closeModal() {
+            document.getElementById('info-modal').classList.add('hidden');
+        }
+
+        document.getElementById('info-modal').addEventListener('click', function(e) {
+            if (e.target === this) closeModal();
+        });
+    </script>
+</body>
+</html>
